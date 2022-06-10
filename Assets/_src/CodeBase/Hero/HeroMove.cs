@@ -1,4 +1,4 @@
-using System;
+using _src.CodeBase.Cameralogic;
 using _src.CodeBase.Infrastructure;
 using _src.CodeBase.Services.Input;
 using UnityEngine;
@@ -28,6 +28,8 @@ namespace _src.CodeBase.Hero
         private void Start()
         {
             _camera = Camera.main;
+            
+            CameraFollow();
         }
 
 
@@ -48,6 +50,12 @@ namespace _src.CodeBase.Hero
             movementVector += Physics.gravity;
             
             _characterController.Move(_movementSpeed * movementVector * Time.deltaTime);
+        }
+        
+        
+        private void CameraFollow()
+        {
+            _camera.GetComponent<CameraFollow>().Follow(gameObject);
         }
     }
 }

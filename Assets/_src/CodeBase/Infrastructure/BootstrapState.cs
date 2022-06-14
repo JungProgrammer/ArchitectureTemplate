@@ -26,7 +26,7 @@ namespace _src.CodeBase.Infrastructure
 
         private void EnterLoadLevel()
         {
-            
+            _stateMachine.Enter<LoadLevelState, string>("Main");
         }
 
 

@@ -1,4 +1,5 @@
-﻿using _src.CodeBase.Logic;
+﻿using _src.CodeBase.Infrastructure.States;
+using _src.CodeBase.Logic;
 using _src.CodeBase.Services.Input;
 using UnityEngine;
 
@@ -6,8 +7,6 @@ namespace _src.CodeBase.Infrastructure
 {
     public class Game
     {
-        public static IInputService InputService;
-        
         public GameStateMachine StateMachine;
 
 

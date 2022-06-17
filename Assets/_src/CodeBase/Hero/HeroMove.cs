@@ -1,6 +1,7 @@
 using System;
 using _src.CodeBase.Cameralogic;
 using _src.CodeBase.Infrastructure;
+using _src.CodeBase.Infrastructure.Services;
 using _src.CodeBase.Services.Input;
 using UnityEngine;
 
@@ -22,7 +23,7 @@ namespace _src.CodeBase.Hero
 
         private void Awake()
         {
-            _inputService = Game.InputService;
+            _inputService = AllServices.Container.Single<IInputService>();
         }
 
 

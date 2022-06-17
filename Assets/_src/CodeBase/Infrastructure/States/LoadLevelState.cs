@@ -1,9 +1,9 @@
 ﻿using _src.CodeBase.Cameralogic;
-using _src.CodeBase.Hero;
+using _src.CodeBase.Infrastructure.Factory;
 using _src.CodeBase.Logic;
 using UnityEngine;
 
-namespace _src.CodeBase.Infrastructure
+namespace _src.CodeBase.Infrastructure.States
 {
     public class LoadLevelState : IPayloadedState<string>
     {

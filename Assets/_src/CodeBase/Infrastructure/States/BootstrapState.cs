@@ -14,7 +14,6 @@ namespace _src.CodeBase.Infrastructure.States
         private readonly SceneLoader _sceneLoader;
         private readonly AllServices _services;
         
-
         public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader, AllServices services)
         {
             _stateMachine = stateMachine;
@@ -23,19 +22,16 @@ namespace _src.CodeBase.Infrastructure.States
             
             RegisterServices();
         }
-        
-        
+
         public void Enter()
         {
             _sceneLoader.Load(Initial, onLoaded: EnterLoadLevel);
         }
         
-
         public void Exit()
         {
             
         }
-
 
         private void EnterLoadLevel()
         {
@@ -47,12 +43,10 @@ namespace _src.CodeBase.Infrastructure.States
             _services.RegisterSingle<IInputService>(InputService());
             _services.RegisterSingle<IAssets>(new AssetProvider());
             _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
-            _services.RegisterSingle<ISaveLoadService>(new SaveLoadService());
-            _services.RegisterSingle<IGameFactory>(new GameFactory(AllServices.Container.Single<IAssets>()));
+            _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssets>()));
+            _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(_services.Single<IPersistentProgressService>(), _services.Single<IGameFactory>()));
         }
-
-
-
+        
         private static IInputService InputService()
         {
             if (Application.isEditor)

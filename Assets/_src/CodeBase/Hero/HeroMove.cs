@@ -54,14 +54,14 @@ namespace _src.CodeBase.Hero
             
             _characterController.Move(_movementSpeed * movementVector * Time.deltaTime);
         }
-
-        public void LoadProgress(PlayerProgress progress)
+        
+        public void UpdateProgress(PlayerProgress progress)
         {
             progress.WorldData.PositionOnLevel =
                 new PositionOnLevel(SceneManager.GetActiveScene().name, transform.position.AsVectorData());
         }
 
-        public void UpdateProgress(PlayerProgress progress)
+        public void LoadProgress(PlayerProgress progress)
         {
             if (SceneManager.GetActiveScene().name != progress.WorldData.PositionOnLevel.Level)
                 return;
@@ -73,12 +73,11 @@ namespace _src.CodeBase.Hero
             
             Warp(to: savedPosition);
         }
-
-
+        
         private void Warp(Vector3Data to)
         {
             _characterController.enabled = false;
-            transform.position = to.AsUnityVector();
+            transform.position = to.AsUnityVector().AddY(_characterController.height);
             _characterController.enabled = true;
         }
     }

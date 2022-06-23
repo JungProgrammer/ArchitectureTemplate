@@ -1277,6 +1277,7 @@ GameObject:
   - component: {fileID: 9588594}
   - component: {fileID: 71670679}
   - component: {fileID: 71670678}
+  - component: {fileID: 6208951264886493076}
   - component: {fileID: 71670677}
   - component: {fileID: 3133412720117998163}
   - component: {fileID: 6204856018055643606}
@@ -1353,6 +1354,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterController: {fileID: 71670677}
   _movementSpeed: 4
+--- !u!114 &6208951264886493076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f21d457947795a1478b5493ad411728d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _heroAnimator: {fileID: 71670679}
 --- !u!143 &71670677
 CharacterController:
   m_ObjectHideFlags: 0

@@ -7560,6 +7560,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7079784218222466352, guid: 127979669a0e8f44498dc031d6ab09c1, type: 3}
+      propertyPath: _damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7079784218222466352, guid: 127979669a0e8f44498dc031d6ab09c1, type: 3}
       propertyPath: _animator
       value: 
       objectReference: {fileID: 1746746771}
@@ -8308,6 +8312,7 @@ MonoBehaviour:
   _attackCooldown: 3
   _cleavage: 0.5
   _effectiveDistance: 0.5
+  _damage: 0
 --- !u!114 &1746746771 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3269810524202374870, guid: 127979669a0e8f44498dc031d6ab09c1, type: 3}
@@ -8890,6 +8895,10 @@ PrefabInstance:
     - target: {fileID: 4665124114459090, guid: 127979669a0e8f44498dc031d6ab09c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7079784218222466352, guid: 127979669a0e8f44498dc031d6ab09c1, type: 3}
+      propertyPath: _damage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7079784218222466352, guid: 127979669a0e8f44498dc031d6ab09c1, type: 3}
       propertyPath: _animator
@@ -9749,6 +9758,7 @@ MonoBehaviour:
   _attackCooldown: 3
   _cleavage: 0.5
   _effectiveDistance: 0.5
+  _damage: 0
 --- !u!114 &2134849659 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3269810524202374870, guid: 127979669a0e8f44498dc031d6ab09c1, type: 3}

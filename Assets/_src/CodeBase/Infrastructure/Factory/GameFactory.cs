@@ -29,9 +29,10 @@ namespace _src.CodeBase.Infrastructure.Factory
             return HeroGameObject;
         }
         
-        public void CreateHud()
+        public GameObject CreateHud()
         {
-            InstantiateRegistered(AssetClass.HudPath);
+            GameObject hud = InstantiateRegistered(AssetClass.HudPath);
+            return hud;
         }
 
         public void CleanUp()

@@ -11,6 +11,10 @@ namespace _src.CodeBase.Hero
 
 
         [SerializeField] 
+        private HeroAttack _heroAttack;
+
+
+        [SerializeField] 
         private HeroMove _heroMove;
 
 
@@ -41,7 +45,9 @@ namespace _src.CodeBase.Hero
         private void Die()
         {
             _isDead = true;
+            
             _heroMove.enabled = false;
+            _heroAttack.enabled = false;
             _heroAnimator.PlayDeath();
 
             Instantiate(_deathFx, transform.position, Quaternion.identity);

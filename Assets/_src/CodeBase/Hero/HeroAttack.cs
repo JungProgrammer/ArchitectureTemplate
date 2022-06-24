@@ -2,6 +2,7 @@
 using _src.CodeBase.Data;
 using _src.CodeBase.Infrastructure.Services;
 using _src.CodeBase.Infrastructure.Services.PersistentProgress;
+using _src.CodeBase.Logic;
 using _src.CodeBase.Services.Input;
 using UnityEngine;
 
@@ -34,13 +35,16 @@ namespace _src.CodeBase.Hero
 
         private void Update()
         {
-            if (_input.IsAttackButtonUp() && _heroAnimator.IsAttacking)
+            if (_input.IsAttackButtonUp() && !_heroAnimator.IsAttacking)
                 _heroAnimator.PlayAttack();
         }
 
         public void OnAttack()
         {
-            
+            for (int i = 0; i < Hit(); i++)
+            {
+                _hits[i].transform.parent.GetComponent<IHealth>().TakeDamage(_stats.Damage);
+            }
         }
 
         public void LoadProgress(PlayerProgress progress) => 

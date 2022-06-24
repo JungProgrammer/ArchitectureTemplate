@@ -10,10 +10,11 @@ namespace _src.CodeBase.Services.Input
         
         
         public abstract Vector2 Axis { get; }
-        
-        
-        public bool IsAttackButtonUp() => 
-            SimpleInput.GetButtonUp(Fire);
+
+
+        public bool IsAttackButtonUp() =>
+            UnityEngine.Input.GetMouseButtonDown(0);
+            // SimpleInput.GetButtonUp(Fire);
         
         
         protected static Vector2 SimpleInputAxis()

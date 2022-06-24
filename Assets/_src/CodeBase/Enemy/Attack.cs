@@ -3,6 +3,7 @@ using System.Linq;
 using _src.CodeBase.Hero;
 using _src.CodeBase.Infrastructure.Factory;
 using _src.CodeBase.Infrastructure.Services;
+using _src.CodeBase.Logic;
 using UnityEngine;
 
 namespace _src.CodeBase.Enemy
@@ -60,7 +61,7 @@ namespace _src.CodeBase.Enemy
             {
                 PhysicsDebug.DrawDebug(StartPoint(), _cleavage, 1);
 
-                hit.transform.GetComponent<HeroHealth>().TakeDamage(_damage);
+                hit.transform.GetComponent<IHealth>().TakeDamage(_damage);
             }
         }
 

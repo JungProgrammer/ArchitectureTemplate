@@ -1,12 +1,13 @@
 using System;
 using _src.CodeBase.Data;
 using _src.CodeBase.Infrastructure.Services.PersistentProgress;
+using _src.CodeBase.Logic;
 using UnityEngine;
 
 namespace _src.CodeBase.Hero
 {
     [RequireComponent(typeof(HeroAnimator))]
-    public class HeroHealth : MonoBehaviour, ISavedProgress
+    public class HeroHealth : MonoBehaviour, ISavedProgress, IHealth
     {
         [SerializeField]
         private HeroAnimator _heroAnimator;
@@ -14,7 +15,7 @@ namespace _src.CodeBase.Hero
         
         private State _state;
 
-        public Action HealthChanged;
+        public event Action HealthChanged;
         
         public float Current
         {

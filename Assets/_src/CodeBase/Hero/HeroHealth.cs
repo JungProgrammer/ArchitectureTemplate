@@ -23,8 +23,8 @@ namespace _src.CodeBase.Hero
             {
                 if (_state.CurrentHP != value)
                 {
+                    _state.CurrentHP = value;
                     HealthChanged?.Invoke();
-                    _state.CurrentHP = value;   
                 }
             }
         }
